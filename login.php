@@ -47,7 +47,8 @@
 </head>
 <body style="margin:0px">
     <div style ="width:100%; display:inline-block; height:630px; padding:0px; margin:0px">
-            <div style = "text-align:center; width:100%; margin-top:50px;" id= "divMemberList">
+		 	<form name=frm method=post action="login_ok.php">
+				<div style = "text-align:center; width:100%; margin-top:50px;" id= "divMemberList">
                     <select name="ddlMemberList" id= "ddlMemberList">
                         <option value="">아이디 선택</option>
                         {{#MEMBER}}
@@ -58,10 +59,10 @@
 
 
                     </select>
-            </div>
-
+            	</div>
+			</form>
             <div style = "text-align:center; width:100%; margin-top:20px">
-                    <button>로그인하기</button>
+                    <button onclick = "login();">로그인하기</button>
             </div>
     </div>
     

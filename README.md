@@ -18,3 +18,9 @@ XAMPP에서 apache-> php mysql은 데이터 베이스를 담당 -> heidiSQL사�
 php로 작성 font-awesome과 jquery 그리고 mustache를 cdn 방식으로 가져온다. 
 java script를 통해 sql에 저장되어있는 유저 정보를 가져옴 -> ajax를 사용해 JSON형식으로 가져온다. -> 동기방식 사용 
 php에서 데이터베이스 스키마 정의한 후 정보를 SQL문을 통해 result값으로 받아오고 JSON 형태로 변환 시킴
+
+## 로그인 과정 세분화
+
+login.php에서 아이디 입력후 -> login_ok.php -> index.php로 이동하는 과정 
+conn.php에서 데이터 연결정보
+로그인 정보가 없다면 다시 로그인 페이지로 보냄 
