@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,minium-scale=1.0,maximum-scale=1.0">
-    <title>로그인</title>
+    
+    <title>로그인 페이지</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,minium-scale=1.0,maximum-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.1/mustache.min.js"></script>
     <script>
 		$(document).ready(function() {
 			loadMemberList();
-		});
+		});//자료가 최종 완료될 때 사용
 
 		function loadMemberList() {
+				
+			//데이터를 json 객체 형태로 받는 것 
 				$.ajax({
 				  type: 'POST',  
 				  url: "getMemberList.php",
@@ -26,7 +29,7 @@
                     let memberList = {"MEMBER": JSON.parse(result)};
 
 					var output = Mustache.render($("#divMemberList").html(), memberList);	
-					$("#divMemberList").html(output);	
+					$("#divMemberList").html(output);
                     //mustache연동 
 			   })
 				.fail(function( result, status, error ) {
@@ -41,6 +44,7 @@
 				return false
 			}
 			document.frm.submit();
+
 		}
 	</script>
 
